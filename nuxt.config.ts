@@ -2,5 +2,18 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@nuxt/ui']
+  modules: [
+    '@nuxt/image',
+    '@nuxt/ui',
+    '@konkonam/nuxt-shopify',
+  ],
+    shopify: {
+        name: '64d50c',
+        clients: {  
+            storefront: {
+                apiVersion: '2025-07',
+                publicAccessToken: process.env.NUXT_STOREFRONT_PUBLIC_ACCESS_TOKEN,
+            },
+        },
+    },
 })
