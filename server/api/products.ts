@@ -8,24 +8,30 @@ export default defineEventHandler(async () => {
    */
   return await storefront.request(
     `#graphql
-        query FetchProducts($productsCount: Int, $imagesCount: Int) {
-            products(first: $productsCount) {
-                nodes {
-                    id
-                    title
-                    description
-                    images (first: $imagesCount) {
-                        edges {
-                            node {
-                                id
-                                url
-                                altText
-                            }
-                        }
-                    }
-                }
-            }
+query FetchProducts($productsCount: Int, $imagesCount: Int) {
+  products(first: $productsCount) {
+    nodes {
+      id
+      title
+      description
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
         }
+      }
+      images(first: $imagesCount) {
+        edges {
+          node {
+            id
+            url
+            altText
+          }
+        }
+      }
+    }
+  }
+}
     `,
     {
       variables: {
