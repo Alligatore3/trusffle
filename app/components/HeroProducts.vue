@@ -4,10 +4,7 @@ const { data } = await useFetch("/api/products");
 const products = computed(
   () =>
     data.value?.data?.products?.nodes.map((node) => {
-      const images = node.images?.edges.map(({ node }) => ({
-        id: node?.id,
-        url: node?.url,
-      }));
+      const images = node.images?.edges.map(({ node }) => node) || [];
 
       return {
         ...node,
@@ -20,10 +17,13 @@ const products = computed(
 <template>
   <section>
     <div class="container mx-auto py-12">
-      <pre>
-            {{ products }}
-        </pre
-      >
+      <div class="flex flex-wrap justify-center gap-6">
+        <ProductCard
+          v-for="product in products"
+          :key="product.id"
+          :product="product"
+        />
+      </div>
     </div>
   </section>
 </template>

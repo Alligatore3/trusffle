@@ -19,6 +19,7 @@ export default defineEventHandler(async () => {
                             node {
                                 id
                                 url
+                                altText
                             }
                         }
                     }
