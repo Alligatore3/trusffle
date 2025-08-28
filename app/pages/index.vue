@@ -1,5 +1,3 @@
 <template>
-  <div>
-   index
-  </div>
+  <HeroProducts />
 </template>

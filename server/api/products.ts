@@ -1,7 +1,8 @@
 export default defineEventHandler(async () => {
-    const storefront = useStorefront()
+  const storefront = useStorefront();
 
-    return await storefront.request(`#graphql
+  return await storefront.request(
+    `#graphql
         query FetchProducts($first: Int) {
             products(first: $first) {
                 nodes {
@@ -11,9 +12,11 @@ export default defineEventHandler(async () => {
                 }
             }
         }
-    `, {
-        variables: {
-            first: 3,
-        },
-    })
-})
+    `,
+    {
+      variables: {
+        first: 3,
+      },
+    }
+  );
+});
