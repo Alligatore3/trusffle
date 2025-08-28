@@ -33,12 +33,12 @@ const price = computed(() => {
   >
     <a href="#">
       <img
-        class="p-8 rounded-t-lg"
+        class="rounded-t-lg h-88 w-full object-cover"
         :alt="mainImage?.altText"
         :src="mainImage?.url"
       />
     </a>
-    <div class="px-5 pb-5">
+    <div class="p-5">
       <a href="#">
         <h5
           class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
