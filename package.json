@@ -12,7 +12,6 @@
   "dependencies": {
     "@konkonam/nuxt-shopify": "^0.0.34",
     "@nuxt/image": "^1.11.0",
-    "@nuxt/ui": "^3.3.2",
     "nuxt": "^4.0.3",
     "typescript": "^5.9.2",
     "vue": "^3.5.18",

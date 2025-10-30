@@ -1,20 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
-  modules: [
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@konkonam/nuxt-shopify',
-  ],
-    shopify: {
-        name: '64d50c',
-        clients: {  
-            storefront: {
-                apiVersion: '2025-07',
-                publicAccessToken: process.env.NUXT_STOREFRONT_PUBLIC_ACCESS_TOKEN,
-            },
-        },
+  // css: ["~/assets/css/main.css"],
+  ssr: false,
+  modules: ["@nuxt/image", "@konkonam/nuxt-shopify"],
+  shopify: {
+    name: "64d50c",
+    clients: {
+      storefront: {
+        apiVersion: "2025-07",
+        publicAccessToken: process.env.NUXT_STOREFRONT_PUBLIC_ACCESS_TOKEN,
+      },
     },
-})
+  },
+});
